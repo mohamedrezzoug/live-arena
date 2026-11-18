@@ -1,0 +1,47 @@
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;overflow:hidden;background:#0a0b1e;font-family:system-ui,"Segoe UI",Tahoma,sans-serif;color:#fff}
+canvas{position:fixed;inset:0;display:block}
+.glass{background:rgba(10,12,40,.55);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.15);border-radius:14px}
+#top{position:fixed;top:1.2vmin;left:50%;transform:translateX(-50%);padding:1vmin 3vmin;text-align:center;white-space:nowrap}
+#top b{font-size:3.4vmin;letter-spacing:.3vmin;background:linear-gradient(90deg,#ff3d81,#ffd23d,#3dd6ff);-webkit-background-clip:text;color:transparent}
+#top small{display:block;font-size:2vmin;opacity:.85}
+#banner{position:fixed;top:12vmin;left:50%;transform:translateX(-50%);text-align:center;width:54%;pointer-events:none;text-shadow:0 .4vmin 2vmin #000}
+#banner h1{font-size:6.2vmin;line-height:1.15}
+#banner p{font-size:2.6vmin;line-height:1.5;opacity:.95;margin-top:.6vmin}
+#timer{font-size:9vmin;font-weight:900;color:#ffd23d}
+#board{position:fixed;top:14vmin;right:1.5vmin;padding:1vmin 1.6vmin;min-width:19vmin;font-size:2.2vmin}
+#board h3{font-size:2.3vmin;margin-bottom:.5vmin}
+#board div{display:flex;justify-content:space-between;gap:2vmin;padding:.2vmin 0}
+#alive{position:fixed;top:14vmin;left:1.5vmin;padding:1vmin 2vmin;font-size:3vmin;font-weight:800}
+#votes{position:fixed;left:50%;bottom:22vmin;transform:translateX(-50%);width:86%;max-width:900px;display:none;padding:1.2vmin}
+#votes .bar{height:5vmin;border-radius:3vmin;overflow:hidden;display:flex;font-size:2.3vmin;font-weight:800}
+#votes .r,#votes .b,#votes .g,#votes .y{display:flex;align-items:center;justify-content:center;transition:flex .3s;flex:1;min-width:0;white-space:nowrap}
+#votes .r{background:#ff3b4f}
+#votes .b{background:#2f7bff}
+#votes .g{background:#2fb457}
+#votes .y{background:#e5b82a;color:#222}
+#feed{position:fixed;left:1.5vmin;bottom:1.5vmin;width:44%;max-width:520px;font-size:2.1vmin;pointer-events:none}
+#feed div{padding:.5vmin 1.2vmin;margin-top:.5vmin;background:rgba(0,0,0,.45);border-radius:10px;animation:in .25s}
+#feed b{color:#ffd23d}
+@keyframes in{from{transform:translateY(8px);opacity:0}to{transform:none;opacity:1}}
+#cmds{position:fixed;right:1.5vmin;bottom:1.5vmin;padding:1vmin 1.6vmin;font-size:2vmin;line-height:1.5;max-width:44%}
+#sim{position:fixed;left:50%;bottom:12vmin;transform:translateX(-50%);display:flex;gap:6px;direction:ltr;z-index:5;opacity:.35}
+#sim:hover,#sim:focus-within{opacity:1}
+#sim input{padding:6px 10px;border-radius:8px;border:0;width:130px}
+#sim label{font-size:12px;display:flex;align-items:center;gap:4px}
+#toast{position:fixed;top:30vmin;left:50%;transform:translateX(-50%);font-size:3vmin;font-weight:800;text-shadow:0 0 12px #000;pointer-events:none}
+
+#fs{position:fixed;top:1.2vmin;left:1.5vmin;z-index:7;width:6vmin;height:6vmin;min-width:34px;min-height:34px;border-radius:10px;border:1px solid rgba(255,255,255,.25);background:rgba(10,12,40,.55);color:#fff;font-size:3.4vmin;opacity:.5}
+#touch{direction:ltr;position:fixed;left:0;right:0;bottom:calc(env(safe-area-inset-bottom,0px) + 1.2vmin);display:none;justify-content:center;align-items:flex-end;gap:2vmin;z-index:6;padding:0 1.5vmin}
+body.touch #touch{display:flex}
+body.touch #cmds,body.touch #sim{display:none}
+body.touch #feed{bottom:25vmin;width:55%}
+body.touch #votes{bottom:30vmin}
+.tb{min-width:16vmin;height:16vmin;padding:0 2vmin;border-radius:4vmin;border:2px solid rgba(255,255,255,.35);background:rgba(255,255,255,.16);backdrop-filter:blur(4px);color:#fff;font-size:5.4vmin;font-weight:800;touch-action:manipulation;-webkit-tap-highlight-color:transparent;user-select:none}
+.tb:active{transform:scale(.93);background:rgba(255,255,255,.35)}
+.tb.big{min-width:26vmin;font-size:6vmin}
+.tb.sm{font-size:4vmin}
+.tb.z0{background:#d9304a}.tb.z1{background:#2f6bff}.tb.z2{background:#2fb457}.tb.z3{background:#e5b82a;color:#222}
+.pad{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:1vmin}
+.pad .tb{min-width:13vmin;height:13vmin;padding:0}
+@media (orientation:landscape) and (max-height:560px){.tb{height:13vmin;min-width:13vmin;font-size:4.6vmin}.pad .tb{height:10vmin;min-width:10vmin}body.touch #feed{display:none}}

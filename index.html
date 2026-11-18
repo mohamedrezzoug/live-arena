@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+<meta name="theme-color" content="#0a0b1e">
+<title>LIVE ARENA 3D</title>
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="stylesheet" href="style.css">
+<script type="importmap">{"imports":{"three":"./vendor/three.module.min.js"}}</script>
+</head>
+<body>
+<div id="top" class="glass"><b>LIVE ARENA 3D</b><small>اكتب <b style="font-size:2.2vmin">JOIN</b> فالتعليقات باش تدخل ⚡</small></div>
+<div id="banner"><h1 id="bt"></h1><p id="bs"></p><div id="timer"></div></div>
+<div id="alive" class="glass">👥 0</div>
+<div id="board" class="glass"><h3 id="bt2">🏆 الترتيب</h3><span id="rows"></span></div>
+<div id="votes" class="glass"><div class="bar"><div class="r" id="vr">🔴 FALL</div><div class="b" id="vb">🔵 LASER</div><div class="g" id="vg">🟢 BRAIN</div><div class="y" id="vy">🟡 RACE</div></div></div>
+<div id="feed"></div>
+<div id="touch"></div>
+<button id="fs" title="ملء الشاشة">⛶</button>
+<div id="toast"></div>
+<div id="cmds" class="glass">⬆️ UP · ⬇️ DOWN · ⬅️ LEFT · ➡️ RIGHT<br>🏁 LEFT/RIGHT + 🦘 JUMP · 🧠 A / B / C / D<br>🗳️ RED / BLUE / GREEN / YELLOW</div>
+<div id="sim"><input id="u" value="أنا" title="اسم"><input id="m" placeholder="JOIN / LEFT / JUMP / A / /gift 100"><label><input type="checkbox" id="bots" checked>Bots</label></div>
+<script type="module" src="game.js"></script>
+</body>
+</html>
